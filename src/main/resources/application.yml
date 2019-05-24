@@ -1,0 +1,12 @@
+server:
+  port: 8088
+
+# 下面的地址时连接到docker容器中cassandra
+spring:
+  data:
+    cassandra:
+      cluster-name: cassandra-1
+      keyspace-name: test_spoints
+      contact-points: 192.168.199.115
+      port: 32779
+
