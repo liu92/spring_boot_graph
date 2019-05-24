@@ -5,8 +5,8 @@ server:
 spring:
   data:
     cassandra:
-      cluster-name: cassandra-1
-      keyspace-name: test_spoints
-      contact-points: 192.168.199.115
-      port: 32779
+      cluster-name: test_cluster
+      keyspace-name: myspace
+      contact-points: 172.17.0.1
+      port: 22
 

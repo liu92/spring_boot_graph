@@ -53,20 +53,13 @@
 			<version>4.0.1</version>
 		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>com.datastax.oss</groupId>-->
-			<!--<artifactId>java-driver-query-builder</artifactId>-->
-			<!--<version>4.0.1</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>com.datastax.oss</groupId>
+			<artifactId>java-driver-query-builder</artifactId>
+			<version>4.0.1</version>
+		</dependency>
 
-		<!--<dependency>-->
-			<!--<groupId>com.datastax.cassandra</groupId>-->
-			<!--<artifactId>cassandra-driver-core</artifactId>-->
-			<!--<version>4.0.0</version>-->
-		<!--</dependency>-->
-
-
-		<!--因为SpringData 前期后很多版本，所以这里加入它 SpringData兼容版本-->
+        <!--因为SpringData 前期后很多版本，所以这里加入它 SpringData兼容版本-->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-releasetrain</artifactId>
