@@ -17,12 +17,20 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<scala.version>2.13.0-RC2</scala.version>
+		<spark.version>2.4.3</spark.version>
 	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-cassandra</artifactId>
+			<exclusions>
+				<exclusion>
+					<artifactId>cassandra-driver-core</artifactId>
+					<groupId>com.datastax.cassandra</groupId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -59,6 +67,14 @@
 			<version>4.0.1</version>
 		</dependency>
 
+		<!--springboot 默认的 cassandra-driver-core3.6.0 使用有问题-->
+		<!--<dependency>-->
+			<!--<groupId>com.datastax.cassandra</groupId>-->
+			<!--<artifactId>cassandra-driver-core</artifactId>-->
+			<!--<version>4.0.0</version>-->
+			<!--<type>pom</type>-->
+		<!--</dependency>-->
+
         <!--因为SpringData 前期后很多版本，所以这里加入它 SpringData兼容版本-->
 		<dependency>
 			<groupId>org.springframework.data</groupId>
@@ -67,10 +83,83 @@
 			<scope>import</scope>
 			<type>pom</type>
 		</dependency>
+
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-core_2.12</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-launcher_2.12</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-mllib_2.12</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.spark</groupId>
+			<artifactId>spark-streaming_2.12</artifactId>
+			<version>${spark.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.scala-lang</groupId>
+			<artifactId>scala-library</artifactId>
+			<version>${scala.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
+		<!--<sourceDirectory>src/main/java</sourceDirectory>-->
+		<!--<testSourceDirectory>src/test/java</testSourceDirectory>-->
 		<plugins>
+			<!--<plugin>-->
+				<!--<artifactId>maven-assembly-plugin</artifactId>-->
+				<!--<configuration>-->
+					<!--<descriptorRefs>-->
+						<!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
+					<!--</descriptorRefs>-->
+					<!--<archive>-->
+						<!--<manifest>-->
+							<!--<mainClass></mainClass>-->
+						<!--</manifest>-->
+					<!--</archive>-->
+				<!--</configuration>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<id>make-assembly</id>-->
+						<!--<phase>package</phase>-->
+						<!--<goals>-->
+							<!--<goal>single</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
+			<!--</plugin>-->
+
+			<!--<plugin>-->
+				<!--<groupId>org.codehaus.mojo</groupId>-->
+				<!--<artifactId>exec-maven-plugin</artifactId>-->
+				<!--<version>1.2.1</version>-->
+				<!--<executions>-->
+					<!--<execution>-->
+						<!--<goals>-->
+							<!--<goal>exec</goal>-->
+						<!--</goals>-->
+					<!--</execution>-->
+				<!--</executions>-->
+				<!--<configuration>-->
+					<!--<executable>java</executable>-->
+					<!--<includeProjectDependencies>false</includeProjectDependencies>-->
+					<!--<includePluginDependencies>false</includePluginDependencies>-->
+					<!--<classpathScope>compile</classpathScope>-->
+					<!--<mainClass>com.docker.demo.sparkword.WorkCount</mainClass>-->
+				<!--</configuration>-->
+			<!--</plugin>-->
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
