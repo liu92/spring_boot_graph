@@ -17,8 +17,10 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<scala.version>2.13.0-RC2</scala.version>
+		<scala.version>2.12.8</scala.version>
 		<spark.version>2.4.3</spark.version>
+		<janusgraph.version>0.3.1</janusgraph.version>
+		<tinkerpop.version>3.3.3</tinkerpop.version>
 	</properties>
 
 	<dependencies>
@@ -111,55 +113,44 @@
 			<version>${scala.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.janusgraph</groupId>
+			<artifactId>janusgraph-core</artifactId>
+			<version>${janusgraph.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.janusgraph</groupId>
+			<artifactId>janusgraph-cassandra</artifactId>
+			<version>${janusgraph.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.janusgraph</groupId>
+			<artifactId>janusgraph-cql</artifactId>
+			<version>${janusgraph.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.janusgraph</groupId>
+			<artifactId>janusgraph-es</artifactId>
+			<version>${janusgraph.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tinkerpop</groupId>
+			<artifactId>gremlin-driver</artifactId>
+			<version>${tinkerpop.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tinkerpop</groupId>
+			<artifactId>gremlin-server</artifactId>
+			<version>${tinkerpop.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<!--<sourceDirectory>src/main/java</sourceDirectory>-->
-		<!--<testSourceDirectory>src/test/java</testSourceDirectory>-->
+
 		<plugins>
-			<!--<plugin>-->
-				<!--<artifactId>maven-assembly-plugin</artifactId>-->
-				<!--<configuration>-->
-					<!--<descriptorRefs>-->
-						<!--<descriptorRef>jar-with-dependencies</descriptorRef>-->
-					<!--</descriptorRefs>-->
-					<!--<archive>-->
-						<!--<manifest>-->
-							<!--<mainClass></mainClass>-->
-						<!--</manifest>-->
-					<!--</archive>-->
-				<!--</configuration>-->
-				<!--<executions>-->
-					<!--<execution>-->
-						<!--<id>make-assembly</id>-->
-						<!--<phase>package</phase>-->
-						<!--<goals>-->
-							<!--<goal>single</goal>-->
-						<!--</goals>-->
-					<!--</execution>-->
-				<!--</executions>-->
-			<!--</plugin>-->
-
-			<!--<plugin>-->
-				<!--<groupId>org.codehaus.mojo</groupId>-->
-				<!--<artifactId>exec-maven-plugin</artifactId>-->
-				<!--<version>1.2.1</version>-->
-				<!--<executions>-->
-					<!--<execution>-->
-						<!--<goals>-->
-							<!--<goal>exec</goal>-->
-						<!--</goals>-->
-					<!--</execution>-->
-				<!--</executions>-->
-				<!--<configuration>-->
-					<!--<executable>java</executable>-->
-					<!--<includeProjectDependencies>false</includeProjectDependencies>-->
-					<!--<includePluginDependencies>false</includePluginDependencies>-->
-					<!--<classpathScope>compile</classpathScope>-->
-					<!--<mainClass>com.docker.demo.sparkword.WorkCount</mainClass>-->
-				<!--</configuration>-->
-			<!--</plugin>-->
-
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

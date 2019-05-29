@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph-0.3.1/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-all/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-berkeleyje/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-bigtable/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-cassandra/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-codepipelines-ci/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-core/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-cql/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-dist/janusgraph-dist-hadoop-2/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-dist/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-doc/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-es/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-examples/example-berkeleyje/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-examples/example-cassandra/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-examples/example-common/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-examples/example-cql/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-examples/example-hbase/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-examples/example-remotegraph/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-examples/example-tinkergraph/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-examples/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hadoop-parent/janusgraph-hadoop-2/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hadoop-parent/janusgraph-hadoop-core/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hadoop-parent/janusgraph-hadoop/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hadoop-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hbase-parent/janusgraph-hbase-098/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hbase-parent/janusgraph-hbase-10/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hbase-parent/janusgraph-hbase-core/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hbase-parent/janusgraph-hbase/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-hbase-parent/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-lucene/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-solr/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/janusgraph-test/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>
