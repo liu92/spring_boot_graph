@@ -20,7 +20,7 @@
 		<scala.version>2.12.8</scala.version>
 		<spark.version>2.4.3</spark.version>
 		<janusgraph.version>0.3.1</janusgraph.version>
-		<tinkerpop.version>3.3.3</tinkerpop.version>
+		<tinkerpop.version>3.4.1</tinkerpop.version>
 	</properties>
 
 	<dependencies>
@@ -145,6 +145,26 @@
 			<artifactId>gremlin-server</artifactId>
 			<version>${tinkerpop.version}</version>
 		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.apache.tinkerpop/gremlin-core -->
+		<dependency>
+			<groupId>org.apache.tinkerpop</groupId>
+			<artifactId>gremlin-core</artifactId>
+			<version>${tinkerpop.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tinkerpop</groupId>
+			<artifactId>hadoop-gremlin</artifactId>
+			<version>${tinkerpop.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.tinkerpop/spark-gremlin -->
+		<dependency>
+			<groupId>org.apache.tinkerpop</groupId>
+			<artifactId>spark-gremlin</artifactId>
+			<version>${tinkerpop.version}</version>
+		</dependency>
+
+
 
 	</dependencies>
 
