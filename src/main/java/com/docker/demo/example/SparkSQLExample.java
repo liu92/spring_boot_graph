@@ -73,7 +73,7 @@ public class SparkSQLExample {
         df.printSchema();
 
         // Select only the "name" column
-        df.select("name").show(1);
+        df.show();
         // +-------+
         // |   name|
         // +-------+
