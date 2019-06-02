@@ -23,6 +23,8 @@
 		<spark.version>2.3.0</spark.version>
 		<janusgraph.version>0.3.1</janusgraph.version>
 		<tinkerpop.version>3.4.1</tinkerpop.version>
+		<!--<elasticsearch.version>7.1.1</elasticsearch.version>-->
+		<elasticsearch.version>6.7.0</elasticsearch.version>
 	</properties>
 
 	<dependencies>
@@ -37,16 +39,16 @@
 			</exclusions>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-cassandra</artifactId>
-			<exclusions>
-				<exclusion>
-					<artifactId>cassandra-driver-core</artifactId>
-					<groupId>com.datastax.cassandra</groupId>
-				</exclusion>
-			</exclusions>
-		</dependency>
+		<!--<dependency> 这个依赖加上；连接不上 cassandra-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-starter-data-cassandra</artifactId>-->
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<artifactId>cassandra-driver-core</artifactId>-->
+					<!--<groupId>com.datastax.cassandra</groupId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
+		<!--</dependency>-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-elasticsearch</artifactId>
@@ -75,6 +77,19 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-jpa</artifactId>
 		</dependency>
+
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>${elasticsearch.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>elasticsearch-rest-client</artifactId>
+			<version>${elasticsearch.version}</version>
+		</dependency>
+
+
 
 		<dependency>
 			<groupId>com.datastax.oss</groupId>

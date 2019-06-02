@@ -14,7 +14,8 @@ import org.apache.spark.api.java.JavaSparkContext;
  */
 public class ConnectionSparkMaster {
 
-    public static final String MASTER = "spark://192.168.199.117:7077";
+//    public static final String MASTER = "spark://192.168.199.117:7077";
+public static final String MASTER = "spark://192.168.199.116:7077";
     public static void main(String[] args) {
         SparkConf sparkConf = new SparkConf().setAppName("demo").setMaster(MASTER);
 

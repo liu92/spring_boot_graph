@@ -54,7 +54,7 @@ public class SpringBootDockerApplicationTests {
 	@Test
 	public void searGraph(){
 
-		Graph graph = GraphFactory.open("E:\\testspace\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
+		JanusGraph graph = JanusGraphFactory.open("E:\\testspace\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
 		GraphTraversalSource g = graph.traversal().withComputer(SparkGraphComputer.class);
 		GraphTraversal<Vertex, Long> count = g.V().count();
 		GraphTraversal<Edge, Long> count1 = g.E().count();
