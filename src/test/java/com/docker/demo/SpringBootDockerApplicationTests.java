@@ -4,9 +4,7 @@ import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.spark.process.computer.SparkGraphComputer;
 import org.apache.tinkerpop.gremlin.structure.Edge;
-import org.apache.tinkerpop.gremlin.structure.Graph;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
-import org.apache.tinkerpop.gremlin.structure.util.GraphFactory;
 import org.janusgraph.core.JanusGraph;
 import org.janusgraph.core.JanusGraphFactory;
 import org.janusgraph.core.schema.JanusGraphManagement;
@@ -46,18 +44,26 @@ public class SpringBootDockerApplicationTests {
 
 	@Test
 	public void sparkDemo(){
-		JanusGraph graph = JanusGraphFactory.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\spark-conf.properties");
-		graph.traversal().withComputer();
+		JanusGraph graph = JanusGraphFactory
+				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\spark-conf.properties");
+		GraphTraversalSource g = graph.traversal().withComputer(SparkGraphComputer.class);
+		// 3. Run some OLAP traversals
+        g.V().count();
+        g.E().count();
 
 	}
 
 	@Test
 	public void searGraph(){
 
-		JanusGraph graph = JanusGraphFactory.open("E:\\testspace\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
+		JanusGraph graph = JanusGraphFactory
+				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
+
+		// traversal 遍历
 		GraphTraversalSource g = graph.traversal().withComputer(SparkGraphComputer.class);
 		GraphTraversal<Vertex, Long> count = g.V().count();
 		GraphTraversal<Edge, Long> count1 = g.E().count();
+		System.out.println(count1);
 
 //		SparkConf sparkConf = new SparkConf().setAppName("Janusgraph").setMaster("192.168.199.115");
 //		SparkContext context = new SparkContext(sparkConf);

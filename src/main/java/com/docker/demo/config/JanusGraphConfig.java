@@ -4,9 +4,6 @@ import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.janusgraph.core.JanusGraph;
 import org.janusgraph.core.JanusGraphFactory;
-import org.janusgraph.core.VertexLabel;
-import org.janusgraph.core.schema.JanusGraphManagement;
-import org.janusgraph.graphdb.management.JanusGraphManager;
 
 /**
  * @ClassName JanusGraphConfig
@@ -17,7 +14,8 @@ import org.janusgraph.graphdb.management.JanusGraphManager;
 public class JanusGraphConfig {
 
     public static  void main(String[] args){
-        JanusGraph graph = JanusGraphFactory.open("conf/janusgraph-cassandra-es.properties");
+        JanusGraph graph = JanusGraphFactory
+                .open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cassandra.properties");
 
         //创建顶点
         Vertex v1 = graph.addVertex("USER");
