@@ -55,9 +55,12 @@ public class SpringBootDockerApplicationTests {
 
 	@Test
 	public void searGraph(){
-
+// 这个地址是公司电脑地址
+//		JanusGraph graph = JanusGraphFactory
+//				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
+		// 这个地址是家里电脑地址
 		JanusGraph graph = JanusGraphFactory
-				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
+				.open("E:\\testspace\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
 
 		// traversal 遍历
 		GraphTraversalSource g = graph.traversal().withComputer(SparkGraphComputer.class);
