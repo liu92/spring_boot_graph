@@ -15,8 +15,8 @@ import static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;
  */
 public class Demo {
     public static void main(String[] args) {
-        SparkConf conf= new SparkConf(true).set("spark.cassandra.connection.host", "127.0.0.1");
-        SparkContext sc = new SparkContext("local", "test", conf);
+        SparkConf conf= new SparkConf(true).set("spark.cassandra.connection.host", "192.168.199.117");
+        SparkContext sc = new SparkContext( conf);
         CassandraJavaRDD rdd = javaFunctions(sc).cassandraTable("test", "words");
         CassandraJavaRDD result = rdd.where("word in ('foo', 'fo2') and count > 1 and count < 8");
         result.foreach(row -> System.out.println(row));
