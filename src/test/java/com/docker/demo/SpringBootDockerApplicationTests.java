@@ -48,14 +48,15 @@ public class SpringBootDockerApplicationTests {
 		//1、每次打开图形时，您只需要提供一个字符串来访问图形，而不是JanusGraphFactory——它要求您指定访问图形时希望使用的后端信息。
 		//2、如果配置了分布式存储后端，那么集群中的所有JanusGraph节点都可以使用您的图形配置。
 
+//		JanusGraph graph = JanusGraphFactory
+//				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cassandra.properties");
 		JanusGraph graph = JanusGraphFactory
-				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cassandra.properties");
+				.open("E:\\testspace\\spring_boot_docker\\src\\main\\resources\\jgex-cassandra.properties");
 		// 遍历
 		GraphTraversalSource g = graph.traversal();
 		//定义属性
 		JanusGraphManagement mgmt  = graph.openManagement();
-//		PropertyKey desc = mgmt.makePropertyKey("desc").dataType(String.class).make();
-		PropertyKey desc = mgmt.makePropertyKey("name").dataType(String.class).cardinality(Cardinality.LIST).make();
+		PropertyKey desc = mgmt.makePropertyKey("desc").dataType(String.class).make();
 		mgmt.commit();
 
 		//插入数据
@@ -66,8 +67,9 @@ public class SpringBootDockerApplicationTests {
 		// Create an index
 		mgmt = graph.openManagement();
 
-		desc = mgmt.getPropertyKey("name");
-		JanusGraphIndex janusGraphIndex = mgmt.buildIndex("mixedExample", Vertex.class).addKey(desc).buildMixedIndex("search");
+		PropertyKey desc1 = mgmt.getPropertyKey("name");
+		JanusGraphIndex janusGraphIndex = mgmt.buildIndex("mixedExample", Vertex.class)
+				.addKey(desc1).buildMixedIndex("search");
 		mgmt.commit();
 		//在定义索引之前， 回滚或提交事务
 		graph.tx().rollback();
@@ -84,11 +86,12 @@ public class SpringBootDockerApplicationTests {
 		mgmt.commit();
 
 		mgmt = graph.openManagement();
-		report = ManagementSystem.awaitGraphIndexStatus(graph, "mixedExample").status(SchemaStatus.ENABLED).call();
+		GraphIndexStatusReport report1 = ManagementSystem.
+				awaitGraphIndexStatus(graph, "mixedExample").status(SchemaStatus.ENABLED).call();
 		mgmt.rollback();
 		// 排除janusgraph最后一个是查询缓存，索引重启一个实例
 		graph.close();
-		graph = JanusGraphFactory
+		JanusGraphFactory
 				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cassandra.properties");
 		g.V().has("desc","baz");
 
@@ -115,11 +118,11 @@ public class SpringBootDockerApplicationTests {
 	@Test
 	public void searGraph(){
 // 这个地址是公司电脑地址
-		JanusGraph graph = JanusGraphFactory
-				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
-		// 这个地址是家里电脑地址
 //		JanusGraph graph = JanusGraphFactory
-//				.open("E:\\testspace\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
+//				.open("D:\\space\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
+		// 这个地址是家里电脑地址
+		JanusGraph graph = JanusGraphFactory
+				.open("E:\\testspace\\spring_boot_docker\\src\\main\\resources\\jgex-cql.properties");
 
 		// traversal 遍历
 		GraphTraversalSource g = graph.traversal().withComputer(SparkGraphComputer.class);
