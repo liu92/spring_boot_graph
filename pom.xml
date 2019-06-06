@@ -29,7 +29,7 @@
 		<elasticsearch-rest-client.version>5.6.8</elasticsearch-rest-client.version>
         <hadoop.vesion>3.1.0</hadoop.vesion>
 		<!--<hadoop.vesion>2.8.5</hadoop.vesion>-->
-		<!--<log4j.version>2.11.2</log4j.version>-->
+		<log4j.version>2.11.2</log4j.version>
 		<!--<elasticsearch.version>6.7.0</elasticsearch.version>-->
 	</properties>
 
@@ -199,16 +199,27 @@
 			<groupId>org.janusgraph</groupId>
 			<artifactId>janusgraph-es</artifactId>
 			<version>${janusgraph.version}</version>
+			<exclusions><exclusion>
+				<groupId>org.elasticsearch.client</groupId>
+				<artifactId>elasticsearch-rest-client</artifactId>
+			</exclusion></exclusions>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.janusgraph</groupId>-->
-			<!--<artifactId>janusgraph-hadoop</artifactId>-->
-			<!--<version>${janusgraph.version}</version>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.janusgraph</groupId>
+			<artifactId>janusgraph-hadoop</artifactId>
+			<version>${janusgraph.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.janusgraph</groupId>
 			<artifactId>janusgraph-hadoop-core</artifactId>
 			<version>${janusgraph.version}</version>
+			<!--<exclusions>-->
+				<!--<exclusion>-->
+					<!--<groupId>org.janusgraph</groupId>-->
+					<!--<artifactId>janusgraph-hbase-core</artifactId>-->
+				<!--</exclusion>-->
+			<!--</exclusions>-->
 		</dependency>
 
 
@@ -278,12 +289,12 @@
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
-			<version>2.11.2</version>
+			<version>${log4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
-			<version>2.11.2</version>
+			<version>${log4j.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.datastax.spark</groupId>

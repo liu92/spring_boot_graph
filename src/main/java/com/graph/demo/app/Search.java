@@ -33,7 +33,7 @@ public class Search {
                 .format("org.apache.spark.sql.cassandra")
                 .options(new HashMap<String, String>() {
                     {
-                        put("keyspace", "busuanzi_org");
+                        put("keyspace", "test_org");
                         put("table", "top_n_url");
                     }
                 }).mode("append").save();
@@ -67,9 +67,10 @@ public class Search {
                 .appName("Java Spark SQL basic example")
                 //            .config("spark.some.config.option", "some-value")
                 .config("spark.cassandra.connection.host", "192.168.199.117")
-//                .config("spark.cassandra.auth.username", "bu")
-//                .config("spark.cassandra.auth.password", "busuan ")
+                .config("spark.cassandra.auth.username", "test")
+                .config("spark.cassandra.auth.password", "test.og ")
                 .config("spark.cassandra.connection.port", "9042")
+                .master("local[*]")
                 .getOrCreate();
         return  sparkSession;
     }

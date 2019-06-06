@@ -83,7 +83,7 @@ public class SparkSQLExample {
         // +-------+
 
         // Select everybody, but increment the age by 1
-        df.select(col("name"), col("age").plus(1)).show();
+        df.select(col("name"), col("age").plus(1));
         // +-------+---------+
         // |   name|(age + 1)|
         // +-------+---------+
