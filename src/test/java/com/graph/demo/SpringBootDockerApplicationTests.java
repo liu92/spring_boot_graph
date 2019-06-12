@@ -5,6 +5,7 @@ import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSo
 import org.apache.tinkerpop.gremlin.spark.process.computer.SparkGraphComputer;
 import org.apache.tinkerpop.gremlin.structure.Edge;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
+
 import org.janusgraph.core.JanusGraph;
 import org.janusgraph.core.JanusGraphFactory;
 import org.janusgraph.core.PropertyKey;
@@ -13,6 +14,7 @@ import org.janusgraph.core.schema.JanusGraphManagement;
 import org.janusgraph.core.schema.SchemaAction;
 import org.janusgraph.core.schema.SchemaStatus;
 import org.janusgraph.diskstorage.BackendException;
+import org.janusgraph.example.GraphOfTheGodsFactory;
 import org.janusgraph.graphdb.database.management.GraphIndexStatusReport;
 import org.janusgraph.graphdb.database.management.ManagementSystem;
 import org.janusgraph.hadoop.MapReduceIndexManagement;
@@ -117,19 +119,43 @@ public class SpringBootDockerApplicationTests {
 	@Test
 	public void searGraph(){
 // 这个地址是公司电脑地址
-		JanusGraph graph = JanusGraphFactory
-				.open("D:\\space\\spring_boot_graph\\src\\main\\resources\\jgex-cql.properties");
-		// 这个地址是家里电脑地址
 //		JanusGraph graph = JanusGraphFactory
-//				.open("E:\\testspace\\spring_boot_graph\\src\\main\\resources\\jgex-cql.properties");
+//				.open("D:\\space\\spring_boot_graph\\src\\main\\resources\\jgex-cql.properties");
+
+
+		// 这个地址是家里电脑地址
+		JanusGraph graph = JanusGraphFactory
+				.open("E:\\testspace\\spring_boot_graph\\src\\main\\resources\\jgex-cql.properties");
+
+		GraphOfTheGodsFactory.load(graph);
+
+		//Create Schema
+//		JanusGraphManagement mgmt  = graph.openManagement();
+//		PropertyKey desc = mgmt.makePropertyKey("desc").dataType(String.class).make();
+//		mgmt.commit();
+//
+//		//插入数据
+//		graph.addVertex("desc", "foo bar");
+//		graph.addVertex("desc", "foo baz");
+//		graph.tx().commit();
+
 
 		// traversal 遍历
 		GraphTraversalSource g = graph.traversal().withComputer(SparkGraphComputer.class);
-		GraphTraversal<Vertex, Long> count = g.V().count();
-		GraphTraversal<Edge, Long> count1 = g.E().count();
-		System.out.println(count);
-		System.out.println(count1);
+//		GraphTraversal<Vertex, Long> count = g.V().count();
+//		GraphTraversal<Edge, Long> count1 = g.E().count();
 
+		GraphTraversal<Vertex, Vertex> has1 = g.V().has("name", "hercules");
+		System.out.println(has1);
+		GraphTraversal<Vertex, Vertex> out = g.V().has("name", "hercules").out("father").out("father");
+		System.out.println(out);
+		GraphTraversal<Vertex, Vertex> has = g.V().has("desc", "baz");
+//		System.out.println(count);
+//		System.out.println(count1);
+		System.out.println(has);
+
+		GraphTraversal<Vertex, Object> values = g.V().has("name", "hercules").values("name");
+		System.out.println(values);
 //		SparkConf sparkConf = new SparkConf().setAppName("Janusgraph").setMaster("192.168.199.115");
 //		SparkContext context = new SparkContext(sparkConf);
 //		JanusGraph graph = JanusGraphFactory

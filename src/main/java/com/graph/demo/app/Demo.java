@@ -3,6 +3,10 @@ package com.graph.demo.app;
 import com.datastax.spark.connector.japi.rdd.CassandraJavaRDD;
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
+import org.apache.spark.sql.Dataset;
+import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SparkSession;
+
 import static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;
 
 /**
@@ -15,11 +19,25 @@ import static com.datastax.spark.connector.japi.CassandraJavaUtil.javaFunctions;
  */
 public class Demo {
     public static void main(String[] args) {
-        SparkConf conf= new SparkConf(true).set("spark.cassandra.connection.host", "192.168.199.117");
-        SparkContext sc = new SparkContext( conf);
-        CassandraJavaRDD rdd = javaFunctions(sc).cassandraTable("test", "words");
-        CassandraJavaRDD result = rdd.where("word in ('foo', 'fo2') and count > 1 and count < 8");
-        result.foreach(row -> System.out.println(row));
+//        SparkConf conf= new SparkConf(true)
+//                .set("spark.cassandra.connection.host", "192.168.199.117").setMaster("local[12]").setAppName("searchTest");
+//        SparkContext sc = new SparkContext( conf);
+//        CassandraJavaRDD rdd = javaFunctions(sc).cassandraTable("test", "edgestore");
+//        CassandraJavaRDD result = rdd.where("age >20 ");
+//
+//        result.foreach(row -> System.out.println(row));
 
+//        SparkSession spark = SparkSession.builder()
+//                .master("local[1]")
+//                .appName("searchTest")
+//                .config("spark.cassandra.connection.host", "192.168.199.117")
+//                .getOrCreate();
+//
+//        Dataset<Row> load =
+//                spark.read()
+//                        .format("org.apache.spark.sql.cassandra")
+//                        .option("keyspace", "test").option("table", "edgestore").load();
+//
+//        load.show(5,false);
     }
 }
