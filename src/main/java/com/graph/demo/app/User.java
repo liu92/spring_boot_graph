@@ -1,6 +1,7 @@
 package com.graph.demo.app;
 
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 /**
  * @ClassName User
@@ -10,7 +11,8 @@ import lombok.Data;
  **/
 @Data
 public class User {
-    private String userName;
+    private int id;
+    private String name;
     private String comment;
 
 }

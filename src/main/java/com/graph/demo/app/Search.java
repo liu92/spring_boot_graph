@@ -23,7 +23,7 @@ public class Search {
 
         User u = new User();
 
-        u.setUserName("xxl");
+        u.setName("xxl");
         u.setComment("nice-job");
 
         //write 查询数据

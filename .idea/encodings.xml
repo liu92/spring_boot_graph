@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-all" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-berkeleyje" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-bigtable" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-cassandra" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-codepipelines-ci" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-cql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-dist" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-dist/janusgraph-dist-hadoop-2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-doc" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples/example-berkeleyje" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples/example-cassandra" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples/example-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples/example-cql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples/example-hbase" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples/example-remotegraph" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples/example-tinkergraph" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hadoop-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hadoop-parent/janusgraph-hadoop" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hadoop-parent/janusgraph-hadoop-2" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hadoop-parent/janusgraph-hadoop-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hbase-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hbase-parent/janusgraph-hbase" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hbase-parent/janusgraph-hbase-10" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hbase-parent/janusgraph-hbase-core" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-hbase-parent/janusgraph-hbase-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-lucene" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-server" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-solr" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-test" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
