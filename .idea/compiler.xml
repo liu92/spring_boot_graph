@@ -8,10 +8,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring_boot_graph" />
+        <module name="spring_boot_hs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="janusgraph" target="1.8" />
       <module name="spring_boot_graph" target="1.8" />
+      <module name="spring_boot_hs" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

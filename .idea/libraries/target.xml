@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="target">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-berkeleyje/target/janusgraph-berkeleyje-0.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-berkeleyje/target/janusgraph-berkeleyje-0.3.1-tests.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

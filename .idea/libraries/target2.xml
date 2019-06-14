@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="target2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-codepipelines-ci/target/original-janusgraph-codepipelines-ci-0.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-codepipelines-ci/target/janusgraph-codepipelines-ci-0.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

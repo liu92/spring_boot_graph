@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="example-tinkergraph-0.3.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-examples/example-tinkergraph/target/example-tinkergraph-0.3.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

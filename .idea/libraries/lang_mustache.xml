@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="lang-mustache">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/lang-mustache/compiler-0.9.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/lang-mustache/lang-mustache-6.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

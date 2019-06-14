@@ -3,10 +3,7 @@ package com.graph.demo.app;
 import com.datastax.spark.connector.japi.rdd.CassandraJavaRDD;
 import org.apache.spark.SparkConf;
 import org.apache.spark.SparkContext;
-import org.apache.spark.sql.Dataset;
-import org.apache.spark.sql.Encoders;
-import org.apache.spark.sql.Row;
-import org.apache.spark.sql.SparkSession;
+import org.apache.spark.sql.*;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -54,8 +51,8 @@ public class Demo {
                 .master("local[1]")
                 .getOrCreate();
         User user = new User();
-        user.setName("zhangsan");
-        user.setComment("测试");
+        user.setName("driver");
+        user.setComment("解决驱动问题");
 
         List<User> users = Arrays.asList(user);
         Dataset<User> dataset = spark.createDataset(users, Encoders.bean(User.class));
@@ -66,7 +63,7 @@ public class Demo {
                        put("keyspace", "jgex");
                        put("table", "user");
                    }
-               }).mode("append").save();
+               }).mode(SaveMode.Append).save();
             dataset.show();
         System.out.println("Cassandra Save success!");
 

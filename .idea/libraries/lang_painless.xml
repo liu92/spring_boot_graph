@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lang-painless">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/lang-painless/asm-debug-all-5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/lang-painless/lang-painless-6.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/lang-painless/antlr4-runtime-4.5.1-1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

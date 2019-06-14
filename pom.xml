@@ -108,11 +108,11 @@
 			<!--<artifactId>java-driver-query-builder</artifactId>-->
 			<!--<version>4.0.1</version>-->
 		<!--</dependency>-->
-		<dependency>
-			<groupId>com.datastax.cassandra</groupId>
-			<artifactId>cassandra-driver-core</artifactId>
-			<version>3.1.0</version>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>com.datastax.cassandra</groupId>-->
+			<!--<artifactId>cassandra-driver-core</artifactId>-->
+			<!--<version>3.1.0</version>-->
+		<!--</dependency>-->
 
 		<!--springboot 默认的 cassandra-driver-core3.6.0 使用有问题-->
 		<!--<dependency>-->
