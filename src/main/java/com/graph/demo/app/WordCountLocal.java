@@ -20,6 +20,8 @@ import java.util.List;
  * @Date 2019/6/5 16:54
  **/
 public class WordCountLocal {
+    
+
     public static void main(String[] args) {
         SparkConf conf = new SparkConf().setMaster("local").setAppName("wordCountTest");
         JavaSparkContext sc = new JavaSparkContext(conf);
