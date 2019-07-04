@@ -4,8 +4,9 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/../janusgraph/pom.xml" />
-        <option value="$PROJECT_DIR$/../janusgraph-0.3.1/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../spring_boot_hs/pom.xml" />
+        <option value="$PROJECT_DIR$/../janusgraph-0.3.1/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -42,7 +43,6 @@
         <option value="$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-server/pom.xml" />
         <option value="$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-solr/pom.xml" />
         <option value="$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-test/pom.xml" />
-        <option value="$PROJECT_DIR$/../janusgraph-0.3.1/pom.xml" />
         <option value="$PROJECT_DIR$/../janusgraph/janusgraph-all/pom.xml" />
         <option value="$PROJECT_DIR$/../janusgraph/janusgraph-berkeleyje/pom.xml" />
         <option value="$PROJECT_DIR$/../janusgraph/janusgraph-bigtable/pom.xml" />

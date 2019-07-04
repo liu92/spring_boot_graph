@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ingest-common">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/ingest-common/ingest-common-6.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/ingest-common/joni-2.1.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/ingest-common/jcodings-1.0.12.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

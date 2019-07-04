@@ -1,0 +1,43 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/jackson-core-2.8.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-spatial-extras-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/jackson-dataformat-cbor-2.8.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/jts-1.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-queries-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/log4j-api-2.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/hppc-0.7.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/t-digest-3.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-misc-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-suggest-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/jna-4.4.0-1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-grouping-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-core-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/HdrHistogram-2.1.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/jackson-dataformat-smile-2.8.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/log4j-core-2.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-sandbox-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/log4j-1.2-api-2.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-spatial-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/jackson-dataformat-yaml-2.8.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/elasticsearch-6.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-backward-codecs-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-join-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/securesm-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/java-version-checker-6.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-analyzers-common-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-spatial3d-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/spatial4j-0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/jopt-simple-5.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/joda-time-2.9.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/plugin-cli-6.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-highlighter-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-queryparser-7.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/snakeyaml-1.15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/lib/lucene-memory-7.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

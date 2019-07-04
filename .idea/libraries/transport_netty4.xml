@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="transport-netty4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/transport-netty4/transport-netty4-6.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/transport-netty4/netty-codec-http-4.1.13.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/transport-netty4/netty-codec-4.1.13.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/transport-netty4/netty-handler-4.1.13.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/transport-netty4/netty-resolver-4.1.13.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/transport-netty4/netty-buffer-4.1.13.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/transport-netty4/netty-common-4.1.13.Final.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph-es/target/elasticsearch-6.0.1/modules/transport-netty4/netty-transport-4.1.13.Final.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

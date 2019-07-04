@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="avro-tools-1.8.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../big-data/busuanzi.org/chapter4-busuanzi.org-avro/avro-tools-1.8.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

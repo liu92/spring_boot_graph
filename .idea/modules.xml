@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph.iml" filepath="$PROJECT_DIR$/../janusgraph-0.3.1/janusgraph.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring_boot_graph.iml" filepath="$PROJECT_DIR$/spring_boot_graph.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../spring_boot_hs/spring_boot_hs.iml" filepath="$PROJECT_DIR$/../spring_boot_hs/spring_boot_hs.iml" />
     </modules>
   </component>
 </project>
