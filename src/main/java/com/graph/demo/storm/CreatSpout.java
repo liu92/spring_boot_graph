@@ -54,7 +54,7 @@ public class CreatSpout implements IRichSpout{
     }
 
     /**
-     * 下一个元祖，用来产生数据
+     * 下一个元组，用来产生数据
      */
     @Override
     public void nextTuple() {

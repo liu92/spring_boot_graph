@@ -27,6 +27,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
+import static org.apache.tinkerpop.gremlin.structure.T.id;
 import static org.apache.tinkerpop.gremlin.structure.T.label;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -54,7 +55,7 @@ public class SpringBootDockerApplicationTests {
 		//2、如果配置了分布式存储后端，那么集群中的所有JanusGraph节点都可以使用您的图形配置。
 
 		JanusGraph graph = JanusGraphFactory
-				.open("D:space\\spring_boot_graphsrcmain\\esourcesjgex-cassandra.properties");
+				.open("D:\\space\\spring_boot_graph\\src\\main\\resources\\jgex-cassandra.properties");
 //		JanusGraph graph = JanusGraphFactory
 //				.open("E:\\testspace\\spring_boot_docker\\src\\main\\resources\\jgex-cassandra.properties");
 		// 遍历
@@ -123,10 +124,23 @@ public class SpringBootDockerApplicationTests {
 
 	@Test
 	public void searGraph(){
-// 这个地址是公司电脑地址
+		/*
+		Cassandra可以嵌入到JanusGraph中，这意味着JanusGraph和Cassandra在同一个JVM中运行并通过进程调用而不是通过网络进行通信。
+		这消除了（反）序列化和网络协议开销，因此可以带来显着的性能改进。
+		在此部署模式下，JanusGraph在内部启动cassandra守护程序，而JanusGraph不再连接到现有集群，而是自己的集群。
+		 */
+        // 这个地址是公司电脑地址
 		//通过配置文件构建图对象
 		JanusGraph graph = JanusGraphFactory
 				.open("D:\\space\\spring_boot_graph\\src\\main\\resources\\jgex-cql.properties");
+
+		/*
+		 *因为Janus存在Cassandra中的所有表,
+		 * 所有列的类型都是blob(binary large object),也就是二进制对象.所有直接看都是奇怪的字节码.
+		 * 那么我们如何测试Janus创建Schema是否成功,是否正确,数据解析是否OK呢?
+		 * 我建议先从小数据测试开始,完整性看行数. 但是,我们如何查看具体的数据呢?
+		 * 难道序列化之后的数据只能反序列化在Janus才能查看么? 可以通过RowID先简单看看.
+		 */
 
 
 		// 这个地址是家里电脑地址
@@ -201,10 +215,16 @@ public class SpringBootDockerApplicationTests {
 //		GraphTraversal<Vertex, Long> count = g.V().count();
 //		GraphTraversal<Edge, Long> count1 = g.E().count();
 
-		GraphTraversal<Vertex, Vertex> has1 = g.V().has("student", "id");
+
+		System.out.println("查询顶点====="+g.V());
+		System.out.println("查询顶点label====="+g.V().hasLabel("titan")); // 查询label为‘knows’的边。
+
+		GraphTraversal<Vertex, Vertex> has1 = g.V().has("name", "titan");
 		System.out.println(has1);
-		GraphTraversal<Vertex, Vertex> out = g.V().has("friends", "id");
+		GraphTraversal<Vertex, Vertex> out = g.V().has("name", "location");
 		System.out.println(out);
+
+		System.out.println("查询边====="+g.E().has("name","father"));
 
 
 		// (Step代表每次遍历的一个步骤)
@@ -233,47 +253,61 @@ public class SpringBootDockerApplicationTests {
 	}
 
 
-//	@Test
-//	public  void VisitJanusGraph(){
-//		//First configure the graph
+	@Test
+	public  void VisitJanusGraph(){
+		//First configure the graph
 //		JanusGraphFactory.Builder builder = JanusGraphFactory.build();
+		JanusGraph graph = JanusGraphFactory
+				.open("D:\\space\\spring_boot_graph\\src\\main\\resources\\jgex-cql.properties");
+
 //		builder.set("storage.backend", "cassandra");
 //		builder.set("storage.hostname", "192.168.199.117");
 //		builder.set("storage.cql.keyspace","test");
 //		builder.set("storage.port", "9042");
-//		//ip address where cassandra is installed
-//		//builder.set("storage.username", “cassandra”);
-//		//buder.set("storage.password", “cassandra”);
-//		//builder.set("storage.cassandra.keyspace", "testing");
-//
-//		//open a graph database
+		//ip address where cassandra is installed
+		//builder.set("storage.username", “cassandra”);
+		//buder.set("storage.password", “cassandra”);
+		//builder.set("storage.cassandra.keyspace", "testing");
+//		JanusGraphManagement management = graph.openManagement();
+//		management.makeVertexLabel("person").make();
+//		management.commit();
+		//open a graph database
 //		JanusGraph graph = builder.open();
-//		//Open a transaction
-//		JanusGraphTransaction tx = graph.newTransaction();
-//		//Create a vertex v1 with label student, add property to the vertex
-//		Vertex v1 = tx.addVertex(T.label, "student");
-//		v1.property("id", 1);
-//		//create a vertex v2 without label and property
-//		Vertex v2 = tx.addVertex();
-//		//create a vertex v3 with label student, then add property to the vertex
-//		Vertex v3 = tx.addVertex(T.label, "student");
-//		v3.property("id", 2);
-//		tx.commit();
-//
-//		//Create edge between 2 vertices
-//		Edge edge12 = v1.addEdge("friends", v2);
-//		Edge edge13 = v1.addEdge("friends", v3);
-//		//Finally commit the transaction
-//		tx.commit();
-//
-//		System.out.println(graph.traversal().V());
-//		System.out.println(graph.traversal().E());
-//	}
+		//Open a transaction
+		JanusGraphTransaction tx = graph.newTransaction();
+		//Create a vertex v1 with label student, add property to the vertex
+		Vertex v1 = tx.addVertex(T.label, "location","name","张三");
+		//create a vertex v2 without label and property
+		Vertex v2 = tx.addVertex(T.label,"monster","name","李四");
+		//create a vertex v3 with label student, then add property to the vertex
+		Vertex v3 = tx.addVertex(T.label, "god","name","小红");
+		tx.commit();
+
+
+
+		//Create edge between 2 vertices
+		Edge edge12 = v1.addEdge("sister", v2);
+		Edge edge13 = v1.addEdge("friends", v3);
+		//Finally commit the transaction
+		tx.commit();
+
+		System.out.println(graph.traversal().V());
+		System.out.println(graph.traversal().E());
+	}
 
 
 	@Test
 	public void  te(){
-		//使用配置文件来连接到相应服务器上的存储数据库
+
+		/*
+		 * JanusGraph是一个图形数据库引擎。JanusGraph本身专注于紧凑图形序列化，
+		 * 丰富的图形数据建模和高效的查询执行。此外，JanusGraph利用Hadoop进行图形分析和批处理图处理。JanusGraph为数据持久性，
+		 * 数据索引和客户端访问实现了强大的模块化接口。JanusGraph的模块化架构使其能够与各种存储
+		 * ，索引和客户端技术进行互操作; 它还简化了扩展JanusGraph以支持新的过程。
+		 */
+		/*
+		使用配置文件来连接到相应服务器上的存储数据库
+		 */
 		JanusGraph graph = JanusGraphFactory
 				.open("D:\\space\\spring_boot_graph\\src\\main\\resources\\jgex-cql.properties");
 		//Create Schema
@@ -283,17 +317,23 @@ public class SpringBootDockerApplicationTests {
 		//使用cardinality(Cardinality)定义与在任何给定的顶点的键关联的值允许的基数。
 
 
-		//SINGLE：对于此类密钥，每个元素最多允许一个值。换句话说，键→值映射对于图中的所有元素都是唯一的。
-		// 属性键birthDate是具有SINGLE基数的示例，因为每个人只有一个出生日期。
-		//创建了一个名字为birthDate的属性，并设置值类型为LONG，且只能保存一个值
+		/*
+		 SINGLE：对于此类密钥，每个元素最多允许一个值。换句话说，键→值映射对于图中的所有元素都是唯一的。
+		 属性键birthDate是具有SINGLE基数的示例，因为每个人只有一个出生日期。
+		 创建了一个名字为birthDate的属性，并设置值类型为LONG，且只能保存一个值
+		 */
 		PropertyKey birthDate  =  mgmt.makePropertyKey("birthDate").dataType(Long.class).cardinality(Cardinality.SINGLE).make();
-		//SET：允许多个值，但每个元素没有重复值用于此类键。换句话说，密钥与一组值相关联。
-		// name如果我们想要捕获个人的所有姓名（包括昵称，婚前姓名等），则属性键具有SET基数。
-		//创建了一个名字为name的属性，并设置值类型为String，且可以保存不能重复的多个值
+		/*
+		  SET：允许多个值，但每个元素没有重复值用于此类键。换句话说，密钥与一组值相关联。
+		  name如果我们想要捕获个人的所有姓名（包括昵称，婚前姓名等），则属性键具有SET基数。
+		  创建了一个名字为name的属性，并设置值类型为String，且可以保存不能重复的多个值
+		 */
 		final PropertyKey name = mgmt.makePropertyKey("name").dataType(String.class).cardinality(Cardinality.SET).make();
-		//LIST：允许每个元素的任意数量的值用于此类键。换句话说，密钥与允许重复值的值列表相关联。
-		// 假设我们将传感器建模为图形中的顶点，则属性键sensorReading是具有LIST基数的示例，以允许记录大量（可能重复的）传感器读数。
-		//创建了一个名字为sensorReading的属性，并设置值类型为Double，且可以保存可以重复的多个值
+		/*
+		 LIST：允许每个元素的任意数量的值用于此类键。换句话说，密钥与允许重复值的值列表相关联。
+		 假设我们将传感器建模为图形中的顶点，则属性键sensorReading是具有LIST基数的示例，以允许记录大量（可能重复的）传感器读数。
+		 创建了一个名字为sensorReading的属性，并设置值类型为Double，且可以保存可以重复的多个值
+		 */
 		PropertyKey sensorReading = mgmt.makePropertyKey("sensorReading").dataType(Double.class).cardinality(Cardinality.LIST).make();
 
 	}

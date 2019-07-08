@@ -2,6 +2,7 @@ package com.graph.demo.storm;
 
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
+import org.apache.storm.StormSubmitter;
 import org.apache.storm.topology.TopologyBuilder;
 import org.apache.storm.tuple.Fields;
 
@@ -25,11 +26,18 @@ public class TestApp {
         builder.setBolt("counter-bolt", new CounterBolt()).fieldsGrouping("creator-bolt",new Fields("call"));
         Config config = new Config();
         config.setDebug(true);
-        //本地模式Storm
-        LocalCluster cluster = new LocalCluster();
-        cluster.submitTopology("LogAnalyserStorm", config, builder.createTopology());
-        Thread.sleep(10000);
-        //停止集群查看结果
-        cluster.shutdown();
+
+        //提交top
+        if(args !=null&&args.length>0){ //有参数时，表示向集群提交作业，并把第一个参数当做topology名称
+            StormSubmitter. submitTopology(args[0], config, builder.createTopology());
+        } else{//没有参数时，本地提交
+            //本地模式Storm
+            LocalCluster localCluster=new LocalCluster();
+            localCluster.submitTopology("wordcountapp" , config , builder.createTopology());
+            Thread. sleep(10000);
+            localCluster.shutdown();
+        }
+
+
     }
 }
