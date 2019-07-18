@@ -5,9 +5,11 @@ import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversal;
 import org.apache.tinkerpop.gremlin.process.traversal.dsl.graph.GraphTraversalSource;
 import org.apache.tinkerpop.gremlin.spark.process.computer.SparkGraphComputer;
 import org.apache.tinkerpop.gremlin.structure.Edge;
+import org.apache.tinkerpop.gremlin.structure.Graph;
 import org.apache.tinkerpop.gremlin.structure.T;
 import org.apache.tinkerpop.gremlin.structure.Vertex;
 
+import org.apache.tinkerpop.gremlin.tinkergraph.structure.TinkerGraph;
 import org.janusgraph.core.*;
 import org.janusgraph.core.schema.JanusGraphIndex;
 import org.janusgraph.core.schema.JanusGraphManagement;
@@ -112,12 +114,37 @@ public class SpringBootDockerApplicationTests {
 
 	@Test
 	public void sparkDemo(){
-		JanusGraph graph = JanusGraphFactory
-				.open("D:\\space\\spring_boot_graph\\src\\main\\resources\\spark-conf.properties");
-		GraphTraversalSource g = graph.traversal().withComputer(SparkGraphComputer.class);
-		// 3. Run some OLAP traversals
-        g.V().count();
-        g.E().count();
+//		JanusGraph graph = JanusGraphFactory
+//				.open("D:\\space\\spring_boot_graph\\src\\main\\resources\\spark-conf.properties");
+//		GraphTraversalSource g = graph.traversal().withComputer(SparkGraphComputer.class);
+//		// 3. Run some OLAP traversals
+//        g.V().count();
+//        g.E().count();
+
+
+		//用内置的TinkerGraph-db创建一个空的图对象
+		Graph g = TinkerGraph.open();
+        //2.给图添加两个person顶点,按K-V对传入
+		Vertex p1 = g.addVertex(T.label, "person", T.id, 1, "name", "jin");
+		Vertex p2 = g.addVertex(T.label, "person", T.id, 2, "name", "tom");
+        //3.给这两个点加一条边
+		p1.addEdge("likes",p2, T.id, 3, "date", "20190220");
+
+
+//		GraphTraversalSource t = TinkerGraph.open().traversal();
+		//#新增顶点. 注意这里有一个内置的顶点id属性--> id==T.id  (其他图实例一般都是自动生成id)
+		//#源码在org.apache.tinkerpop.gremlin.structure.T中,T是一个枚举(enum)
+		//#T有:label,id,key,value四个儿子. 默认gremlin静态导入了T,所以你可以直接使用它的儿子
+//		 Vertex v1 = t.addV("person").property(id, 1)
+//				.property("pid", "0x01")
+//				.property("name", "A")
+//				.property("age", 18).next();//next()去了不报错.但是后面添加边关联的时候就会报错. 作用待确认
+//
+//		Vertex v2 = t.addV("software").property(id, 3)
+//				.property("pid", "0x02")
+//				.property("name", "janus")
+//				.property("lang", "go").next();
+
 
 	}
 

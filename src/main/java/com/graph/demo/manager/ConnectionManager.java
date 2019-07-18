@@ -19,6 +19,8 @@ public class ConnectionManager {
     private static String user;
     private static String password;
 
+    private Object s;
+
     static {
         try {
           Properties properties = new Properties();

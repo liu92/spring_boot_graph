@@ -22,6 +22,16 @@ public class ClusterApp {
         builder.setSpout("spout", new CreatSpout());
         //设置creator-bolt
         builder.setBolt("creator-bolt", new CreatorBolt()).shuffleGrouping("spout");
+
+         /* builder.setBolt("green-bolt", new CreatorBolt(), 2)
+              .setNumTasks(4)
+              .shuffleGrouping("blue-spout");
+         * 在上面的代码中,我们配置 了Storm 来运行 Bolt "CreatorBolt",
+         * 其初始数量为两个 executor（执行器）和四个相关联的 tasks（任务）.
+         * Storm 的每个 executor（线程）将会运行两个 tasks（任务）.
+         * 如果您不显示的配置 tasks 的数量, Storm 将使用每个 executor 一个 task 的默认配置来运行它们.
+         */
+
         //设置counter-Bolt
         builder.setBolt("counter-bolt", new CounterBolt()).fieldsGrouping("creator-bolt",new Fields("call"));
         Config config = new Config();
