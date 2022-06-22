@@ -26,7 +26,7 @@
 		<tinkerpop.version>3.4.1</tinkerpop.version>
 		<!--<elasticsearch.version>7.1.1</elasticsearch.version>-->
 		<elasticsearch.version>5.1.2</elasticsearch.version>
-		<elasticsearch-rest-client.version>5.6.8</elasticsearch-rest-client.version>
+		<elasticsearch-rest-client.version>6.8.15</elasticsearch-rest-client.version>
         <hadoop.vesion>3.1.0</hadoop.vesion>
 		<!--<hadoop.vesion>2.8.5</hadoop.vesion>-->
 		<log4j.version>2.11.2</log4j.version>
